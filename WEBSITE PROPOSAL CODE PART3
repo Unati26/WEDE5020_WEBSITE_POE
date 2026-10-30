@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Breeze Resort | Eco-Luxury Beachfront Resort Ballito</title>
+    <!-- PART 3 SEO -->
+    <meta name="description" content="Ocean Breeze Resort in Ballito, KZN is a 5-star eco-luxury beach resort. Book direct for family holidays, wellness spa, destination weddings">
+    <meta name="keywords" content="Ballito resort, KZN beach holiday, eco-luxury resort Ballito, Ballito accommodation, destination wedding KZN">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'seafoam': '#4A9E8F', 'sand': '#E8DCC4', 'navy': '#1F2A44', 'coral': '#F2855E' },
+                    fontFamily: { 'heading': ['Cormorant Garamond','serif'], 'body': ['Lato','sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .page-section { display: none; opacity: 0; }
+        .page-section.active { display: block; opacity: 1; animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(15px);} to { opacity:1; transform:translateY(0);} }
+        /* PART 2 STYLES KEPT */
+        .hover-lift { transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .hover-lift:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(31,42,68,0.25); }
+        .nav-link { position: relative; }
+        .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#4A9E8F; transition:width 0.3s; }
+        .nav-link:hover::after { width:100%; }
+        input:focus, select:focus, textarea:focus { outline:none; border-color:#4A9E8F; box-shadow:0 0 0 3px rgba(74,158,143,0.15); }
+        /* PART 3 STYLES */
+        #sticky-booking { transform:translateY(-100%); transition:transform 0.4s ease; }
+        #sticky-booking.show-bar { transform:translateY(0); }
+        .fade-hidden { opacity:0; transform:translateY(20px); transition:all 0.8s ease; }
+        .fade-in { opacity:1; transform:translateY(0); }
+    </style>
+</head>
+<body class="font-body bg-[#FFFEF9]">
+    <!-- PART 3: Sticky Bar -->
+    <div id="sticky-booking" class="fixed top-0 w-full z-[1000] text-white p-3 flex justify-between items-center px-6 bg-navy">
+        <span class="font-bold">Direct Booking -15% OFF | 120 Bookings/month KPI</span>
+        <button onclick="showPage('accommodation')" class="bg-coral px-6 py-2 rounded-full font-bold">Book in 2 Clicks</button>
+    </div>
+
+    <nav class="flex justify-between items-center p-6 bg-white shadow-sm mt-12 sticky top-0 z-50">
+        <h1 class="text-2xl font-heading font-bold text-navy">OCEAN BREEZE <span class="text-seafoam">RESORT</span></h1>
+        <div class="hidden md:flex space-x-6">
+            <a href="#" onclick="showPage('home')" class="nav-link font-bold">Home</a>
+            <a href="#" onclick="showPage('contact')" class="nav-link">Contact - Maps & Form</a>
+        </div>
+    </nav>
+
+    <section id="home" class="page-section active">
+        <header class="relative h-[75vh] flex items-center justify-center text-center text-white" style="background: linear-gradient(rgba(31,42,68,0.5), rgba(31,42,68,0.5)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4') center/cover;">
+            <div class="max-w-3xl px-4">
+                <h1 class="text-6xl font-heading font-bold mb-4">Eco-Luxury Beach Experiences</h1>
+                <a href="#" onclick="showPage('contact')" class="bg-coral px-10 py-4 rounded-full text-lg font-bold inline-block hover-lift">Book Direct Now</a>
+            </div>
+        </header>
+    </section>
+
+    <section id="contact" class="page-section max-w-6xl mx-auto my-10 p-6">
+        <h2 class="text-4xl font-heading text-navy mb-6">Part 3: Forms + Maps + YouTube</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <form id="eventForm" onsubmit="return validateEventForm()" class="space-y-4">
+                    <input type="text" id="name" placeholder="Full Name" class="border p-3 rounded w-full" required>
+                    <input type="email" id="email" placeholder="Email" class="border p-3 rounded w-full" required>
+                    <select id="eventType" class="border p-3 rounded w-full" required>
+                        <option value="">Select Event Type</option>
+                        <option value="wedding">Destination Wedding</option>
+                        <option value="family">Family Retreat</option>
+                        <option value="corporate">Corporate Event</option>
+                    </select>
+                    <input type="date" id="eventDate" class="border p-3 rounded w-full" required>
+                    <input type="number" id="guests" placeholder="Guests 1-20" min="1" max="20" class="border p-3 rounded w-full" required>
+                    <input type="tel" id="phone" placeholder="WhatsApp 10 digits" class="border p-3 rounded w-full" required>
+                    <textarea id="message" class="border p-3 rounded w-full h-24"></textarea>
+                    <button type="submit" class="w-full py-4 rounded font-bold text-white bg-seafoam">Send Enquiry</button>
+                    <p id="formMessage" class="font-bold text-center"></p>
+                </form>
+            </div>
+            <div class="space-y-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470!2d31.212!3d-29.539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBallito!5e0!3m2!1sen!2sza" width="100%" height="300" style="border:0;" loading="lazy" title="Ocean Breeze Resort Ballito Map"></iframe>
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed/9w3a7Kz1T9w" title="Ocean Breeze VR Tour YouTube" frameborder="0" allowfullscreen></iframe>
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" alt="Family enjoying all-inclusive beach holiday at Ocean Breeze Resort Ballito infinity pool" class="rounded gallery-img fade-hidden h-32 w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+        window.addEventListener('scroll', function() {
+            const bar = document.getElementById('sticky-booking');
+            if (window.scrollY > 400) bar.classList.add('show-bar'); else bar.classList.remove('show-bar');
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('fade-in'); });
+        }, {threshold:0.1});
+        document.querySelectorAll('.gallery-img').forEach(el => observer.observe(el));
+
+        function validateEventForm() {
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let eventDate = document.getElementById('eventDate').value;
+            let guests = document.getElementById('guests').value;
+            let phone = document.getElementById('phone').value.trim();
+            let msg = document.getElementById('formMessage');
+            if (name.length < 3) { msg.innerText = "Name must be at least 3 characters"; msg.style.color="#F2855E"; return false; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.innerText="Enter valid email"; msg.style.color="#F2855E"; return false; }
+            if (new Date(eventDate) < new Date().setHours(0,0,0,0)) { msg.innerText="Date cannot be in past"; msg.style.color="#F2855E"; return false; }
+            if (guests <1 || guests >20) { msg.innerText="Guests 1-20"; msg.style.color="#F2855E"; return false; }
+            if (!/^[0-9]{10}$/.test(phone)) { msg.innerText="Enter 10-digit WhatsApp"; msg.style.color="#F2855E"; return false; }
+            msg.innerText="Success! GA4 & Meta Pixel tracked - Lead for 60/month KPI"; msg.style.color="#4A9E8F"; return false;
+        }
+    </script>
+</body>
+</html>
